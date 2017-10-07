@@ -22,12 +22,14 @@
     <ClCompile Include="LinkList.cpp" />
     <ClCompile Include="List.cpp" />
     <ClCompile Include="SeqList.cpp" />
+    <ClCompile Include="Sort.cpp" />
     <ClCompile Include="源.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LinkList.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="SeqList.h" />
+    <ClInclude Include="Sort.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

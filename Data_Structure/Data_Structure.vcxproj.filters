@@ -15,6 +15,9 @@
     <Filter Include="线性表\数组实现">
       <UniqueIdentifier>{dc4cd10c-c3c1-4f66-9f2f-df6bc9b2764e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="排序">
+      <UniqueIdentifier>{919cb2c6-86e1-4020-ad82-b45f01290dba}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="List.cpp">
@@ -29,6 +32,9 @@
     <ClCompile Include="LinkList.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Sort.cpp">
+      <Filter>排序</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="List.h">
@@ -38,5 +44,8 @@
       <Filter>线性表\数组实现</Filter>
     </ClInclude>
     <ClInclude Include="LinkList.h" />
+    <ClInclude Include="Sort.h">
+      <Filter>排序</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
