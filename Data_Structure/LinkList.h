@@ -3,14 +3,55 @@
 #include <iostream>
 using namespace std;
 
-/*declare the Node class*/
-template <class T>
-class Node<T>;
-
 template <class T>
 class LinkList :
 	public List<T>
 {
+	/* class Node*/
+private:
+	template <class T>
+	class Node{
+		
+	private:
+		T data;
+		Node<T>* next;
+	public:
+		Node() :next(nullptr) { ; }
+		Node(const T& value) :data(value), next(nullptr) {}
+		~Node() {}
+		Node<T>* nextNode()
+		{
+			return next;
+		}
+
+		static Node<T>* create(const T& item, Node<T>* link = nullptr)
+		{
+			Node<T> node = new Node<T>(item);
+			node->next = link;
+			return node;
+		}
+
+		bool insertAfter(const Node<T>& node)
+		{
+			node->next = next;
+			next = node;
+			return true;
+
+		}
+
+		bool removeAfter()
+		{
+			Node<T>* temp = this->next;
+			this->next = temp->next;
+			delete temp;
+			temp = NULL;
+			return true;
+		}
+
+	};
+
+
+
 private:
 	Node<T>* first;
 	Node<T>* last;
@@ -123,45 +164,4 @@ public:
 	
 };
 
-template<class T>
-class Node
-{
-	friend class LinkList <T>;
-private:
-	T data;
-	Node<T>* next;
-public:
-	Node() :next(nullptr) { ; }
-	Node(const T& value) :data(value), next(nullptr) {}
-	~Node() {}
-	Node<T>* nextNode()
-	{
-		return next;
-	}
-
-	static Node<T>* create(const T& item,Node<T>* link = nullptr)
-	{
-		Node<T> node = new Node<T>(item);
-		node->next = link;
-		return node;
-	}
-
-	bool insertAfter(const Node<T>& node)
-	{
-		node->next = next;
-		next = node;
-		return true;
-
-	}
-
-	bool removeAfter()
-	{
-		Node<T>* temp = this->next;
-		this->next = temp->next;
-		delete temp;
-		temp = NULL;
-		return true;
-	}
-
-};
 

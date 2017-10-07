@@ -1,5 +1,5 @@
 #include "Sort.h"
-
+int* Sort::aux;
 
 
 Sort::Sort()
@@ -58,7 +58,7 @@ void Sort::merge(int a[], int begin, int mid, int end)
 	int j = mid + 1;
 	for (int k = 0; k <= end; k++)
 		aux[k] = a[k];
-	for (int k = 0; k < end; k++)
+	for (int k = 0; k <= end; k++)
 	{
 		if (j > mid) a[k] = aux[j++];
 		else if (j > end) a[k] = aux[i++];
